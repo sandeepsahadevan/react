@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { CardList } from './components/card-list/card-list.component'
-import logo from './logo.svg';
 import './App.css';
 import { Search } from './components/search-box/search-box.component'
 
@@ -33,11 +32,9 @@ class App extends Component {
       )
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <Search placeholder = 'Select Monster' handleChange={this.handleChange}/>
-          <CardList monsters={filteredMonsters}/>        
-        </header>
+        <h1>monster rolodex</h1>
+        <Search placeholder = 'Select Monster' handleChange={this.handleChange}/>
+        <CardList monsters={filteredMonsters}/>  
       </div>
     )
   }
