@@ -6,7 +6,7 @@ import { Search } from './components/search-box/search-box.component'
 class App extends Component {
   constructor(){
     super();
-
+    console.log('constructor');
     this.state = {
       monsters : [],
       searchMonster : ''
@@ -16,11 +16,24 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log('componentDidMount');
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(users => this.setState({ monsters: users}))
   }
 
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentUpdate', nextState.monsters );
+    return true;
+  }
   handleChange = (e) => {
     this.setState( {searchMonster : e.target.value});
   }
@@ -34,7 +47,7 @@ class App extends Component {
       <div className="App">
         <h1>monster rolodex</h1>
         <Search placeholder = 'Select Monster' handleChange={this.handleChange}/>
-        <CardList monsters={filteredMonsters}/>  
+        {filteredMonsters.length >0 ? <CardList monsters={filteredMonsters}/> : null }
       </div>
     )
   }
