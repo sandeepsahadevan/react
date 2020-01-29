@@ -11,7 +11,7 @@ class ShopPage extends React.Component{
         };
     }
     
-    return() {
+    render() {
         return (<div>Shop Page</div>);
     }
 }
