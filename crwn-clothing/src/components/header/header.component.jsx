@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Header = () => (
     <div className='header'>
         <Link className='logo-container' to='/'>
-            <Logo src='../../assets/crown.svg'></Logo>
+            <Logo className='logo'/>
         </Link>
         <div className='options'>
             <Link className='option' to='/shop'>
