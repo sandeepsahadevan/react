@@ -3,6 +3,8 @@ import React from 'react';
 import './sign-in.styles.scss'
 import FormInput from '../form-input/form-input.component';
 
+import CustomButton from '../custom-button/custom-button.component'
+
 class SignIn extends React.Component{
     
     constructor(props){
@@ -31,7 +33,7 @@ class SignIn extends React.Component{
                 <form onSubmit={this.handlesubmit}>
                     <FormInput label='Email' type='text' value={this.state.email} name='email' handleChange={this.handleChange}/>                    
                     <FormInput label='Password' type='password' value={this.state.password} name='password' handleChange={this.handleChange}/>
-                    <input type='submit' value='Submit Form'/>
+                    <CustomButton type='submit' value='Submit Form'>SIGN IN</CustomButton>
                 </form>
             </div>
         );
